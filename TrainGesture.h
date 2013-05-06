@@ -1,3 +1,7 @@
+/*
+ * Developer : Prakriti Chintalapoodi - c.prakriti@gmail.com 
+*/
+
 #ifndef TRAINGESTURE_H
 #define TRAINGESTURE_H
 
@@ -13,7 +17,6 @@ using namespace std;
 class TrainGesture
 {
 public:
-    TrainGesture();
     void recordGesture(vector<Mat>& trainData, int frames_to_record);
     void playGesture(vector<Mat>& trainData);
 };
