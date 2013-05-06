@@ -1,8 +1,8 @@
-#include "TrainGesture.h"
+/*
+ * Developer : Prakriti Chintalapoodi - c.prakriti@gmail.com 
+*/
 
-TrainGesture::TrainGesture()
-{
-}
+#include "TrainGesture.h"
 
 void TrainGesture::recordGesture(vector<Mat>& trainData, int frames_to_record)
 {
