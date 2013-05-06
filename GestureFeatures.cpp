@@ -1,21 +1,10 @@
+/*
+ * Developer : Prakriti Chintalapoodi - c.prakriti@gmail.com 
+*/
+
 #include "GestureFeatures.h"
 
-
 // Bag of Words Implementation:
-
-// Step 1: Extract the SURF local feature vectors from each of training images.
-//         Put all the local feature vectors extracted into a single set,
-//         doesn't matter which feature vector came from which training image
-// Step 2: Apply a clustering algorithm (e.g. k-means) over the set of local feature vectors and find N centroid coordinates
-//         for dictionary size N and assign an id to each centroid.
-//         This set of centroids = BoW vocabulary
-// Step 3: Find the nearest centroid for each local feature vector.
-//         Global feature vector of each image = normalized histogram where
-//         i-th bin of the histogram = frequency of i-th word of the vocabulary in the given image
-//                                   = how many times ith centroid occurred in that image
-// DictionarySize = number of centroids for K means clustering = number of bins in BoW histogram = size of global feature vector of image
-
-
 
 // Constructor
 GestureFeatures::GestureFeatures(int dictionarySize)
