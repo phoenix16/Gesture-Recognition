@@ -30,7 +30,7 @@ private:
     CvSVMParams SVM_params;
     CvSVM SVM;    
     Mat trainData, trainLabels, testData;
-
+    
     void getTrainingVocabulary(vector<Mat>& trainVector);
     void getBOWFeatures(vector<Mat>& inputVector, Mat& featureMat);
 public:
