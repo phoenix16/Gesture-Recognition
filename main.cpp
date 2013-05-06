@@ -1,3 +1,7 @@
+/*
+ * Developer : Prakriti Chintalapoodi - c.prakriti@gmail.com 
+*/
+
 #include "TrainGesture.h"
 #include "GestureFeatures.h"
 
@@ -18,7 +22,6 @@ int main()
     }
 
     GestureFeatures feat(DICTIONARY_SIZE);
-
     feat.computeTrainFeatures(trainVector);
 
     Mat frame;
