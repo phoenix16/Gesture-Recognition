@@ -24,7 +24,8 @@ private:
     Ptr<DescriptorMatcher> matcher;
     BOWImgDescriptorExtractor bowDE;
     CvSVMParams SVM_params;
-    CvSVM SVM;
+    CvSVM SVM;    
+    Mat trainData, trainLabels, testData;
 
     void getTrainingVocabulary(vector<Mat>& trainVector);
     void getBOWFeatures(vector<Mat>& inputVector, Mat& featureMat);
@@ -32,7 +33,6 @@ public:
     GestureFeatures(int dictionarySize);
     void computeTrainFeatures(vector<Mat>& trainVector);
     void computeTestFeature(Mat& testImage);
-    Mat trainData, trainLabels, testData;
 };
 
 #endif // GESTUREFEATURES_H
