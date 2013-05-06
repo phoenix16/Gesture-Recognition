@@ -1,3 +1,7 @@
+/*
+ * Developer : Prakriti Chintalapoodi - c.prakriti@gmail.com 
+*/
+
 #ifndef GESTUREFEATURES_H
 #define GESTUREFEATURES_H
 
