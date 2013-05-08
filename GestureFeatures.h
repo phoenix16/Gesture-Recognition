@@ -30,9 +30,9 @@ private:
     void getTrainingVocabulary(vector<Mat>& trainVector);
     void getBOWFeatures(vector<Mat>& inputVector, Mat& featureMat);
 public:
-    GestureFeatures(int dictionarySize);
+    GestureFeatures(int dictionarySize, string detector_type, string descriptor_type);
     void computeTrainFeatures(vector<Mat>& trainVector);
-    void computeTestFeature(Mat& testImage);
+    void computeTestFeature(Mat& testImage, int& response);
 };
 
 #endif // GESTUREFEATURES_H

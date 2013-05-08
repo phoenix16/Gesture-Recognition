@@ -1,29 +1,12 @@
 #include "GestureFeatures.h"
 
-
-// Bag of Words Implementation:
-
-// Step 1: Extract the SURF local feature vectors from each of training images.
-//         Put all the local feature vectors extracted into a single set,
-//         doesn't matter which feature vector came from which training image
-// Step 2: Apply a clustering algorithm (e.g. k-means) over the set of local feature vectors and find N centroid coordinates
-//         for dictionary size N and assign an id to each centroid.
-//         This set of centroids = BoW vocabulary
-// Step 3: Find the nearest centroid for each local feature vector.
-//         Global feature vector of each image = normalized histogram where
-//         i-th bin of the histogram = frequency of i-th word of the vocabulary in the given image
-//                                   = how many times ith centroid occurred in that image
-// DictionarySize = number of centroids for K means clustering = number of bins in BoW histogram = size of global feature vector of image
-
-
-
 // Constructor
-GestureFeatures::GestureFeatures(int dictionarySize)
+GestureFeatures::GestureFeatures(int dictionarySize, string detector_type, string descriptor_type)
      :tc(CV_TERMCRIT_ITER, 10, 0.001),
       bowTrainer(dictionarySize, tc, 1, KMEANS_PP_CENTERS), // retries = 1
       SURFdetector(400),
-      detector(FeatureDetector::create("FAST")), // SURF
-      extractor(DescriptorExtractor::create("BRISK")), // SURF
+      detector(FeatureDetector::create(detector_type)),
+      extractor(DescriptorExtractor::create(descriptor_type)),
       matcher(DescriptorMatcher::create("FlannBased")),
       bowDE(extractor, matcher),
       trainData(0, dictionarySize, CV_32FC1),
@@ -136,11 +119,11 @@ void GestureFeatures::computeTrainFeatures(vector<Mat>& trainVector)
 
 // Public function
 // Find the global feature vector for the test data and predict it using SVM
-void GestureFeatures::computeTestFeature(Mat& testImage)
+void GestureFeatures::computeTestFeature(Mat& testImage, int& response)
 {
     vector<KeyPoint> keypoints;
     detector->detect(testImage, keypoints);
     bowDE.compute(testImage, keypoints, testData);
-    cout << SVM.predict(testData) << endl;
+    response = (int)SVM.predict(testData);
 }
 
