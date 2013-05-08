@@ -1,8 +1,8 @@
-#include "TrainGesture.h"
+/*
+ * Developer : Prakriti Chintalapoodi - c.prakriti@gmail.com 
+*/
 
-TrainGesture::TrainGesture()
-{
-}
+#include "TrainGesture.h"
 
 void TrainGesture::recordGesture(vector<Mat>& trainData, int frames_to_record)
 {
@@ -26,7 +26,7 @@ void TrainGesture::recordGesture(vector<Mat>& trainData, int frames_to_record)
 
             if (cvWaitKey(10) == 'r') // will work only if a window is already open
             {
-                cout << "Started Recording Gesture !" << endl;
+                cout << "Started Recording Gesture!" << endl;
                 record = true;
             }
 

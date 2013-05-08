@@ -1,5 +1,14 @@
+/*
+ * Developer : Prakriti Chintalapoodi - c.prakriti@gmail.com 
+*/
+
+<<<<<<< HEAD
+=======
 #include "GestureFeatures.h"
 
+// Bag of Words Implementation:
+
+>>>>>>> f08d431341d499fb2997afaffd5fc20144df5ec4
 // Constructor
 GestureFeatures::GestureFeatures(int dictionarySize, string detector_type, string descriptor_type)
      :tc(CV_TERMCRIT_ITER, 10, 0.001),

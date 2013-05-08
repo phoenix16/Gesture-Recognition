@@ -1,3 +1,7 @@
+/*
+ * Developer : Prakriti Chintalapoodi - c.prakriti@gmail.com 
+*/
+
 #ifndef GESTUREFEATURES_H
 #define GESTUREFEATURES_H
 
@@ -26,7 +30,7 @@ private:
     CvSVMParams SVM_params;
     CvSVM SVM;    
     Mat trainData, trainLabels, testData;
-
+    
     void getTrainingVocabulary(vector<Mat>& trainVector);
     void getBOWFeatures(vector<Mat>& inputVector, Mat& featureMat);
 public:
