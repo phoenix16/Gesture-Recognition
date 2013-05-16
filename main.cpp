@@ -24,12 +24,8 @@ int main()
 //        g_obj.playGesture(trainFrames);
     }
 
-<<<<<<< HEAD
     GestureFeatures feat(DICTIONARY_SIZE, "SURF", "SURF");
-
-=======
-    GestureFeatures feat(DICTIONARY_SIZE);
->>>>>>> f08d431341d499fb2997afaffd5fc20144df5ec4
+    
     feat.computeTrainFeatures(trainVector);
 
     Mat frame;
