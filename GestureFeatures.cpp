@@ -108,7 +108,7 @@ void GestureFeatures::computeTrainFeatures(vector<Mat>& trainVector)
     cout << "Creating dictionary..." << endl;
     getTrainingVocabulary(trainVector);
 
-    cout << "\nClustering " << bowTrainer.descripotorsCount() << " features to form dictionary..." << endl;
+    cout << "\nClustering " << bowTrainer.descriptorsCount() << " features to form dictionary..." << endl;
     Mat dictionary = bowTrainer.cluster();
     bowDE.setVocabulary(dictionary);
     // Dictionary contains the centroids of the training set features. This is NOT the training data to be fed into the classifier
