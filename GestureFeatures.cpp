@@ -102,7 +102,7 @@ void GestureFeatures::getBOWFeatures(vector<Mat>& inputVector, Mat& featureMat)
 
 
 // Public function
-// Find the global features and their labels for the training data ans train the SVM
+// Find the global features and their labels for the training data and train the SVM
 void GestureFeatures::computeTrainFeatures(vector<Mat>& trainVector)
 {
     cout << "Creating dictionary..." << endl;
