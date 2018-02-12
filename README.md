@@ -3,7 +3,7 @@ Gesture-Recognition
 
 This is a desktop app to control VLC player functionality using hand gestures.
 
-Assumptions:
+\bold Assumptions:
 - A webcam camera is connected, streaming live video feed.
 - An instance of VLC player is already running when using gestures to control it.
 - Before usage, hand gestures are trained and associated with a particular function such as Play/Pause/Next song.
